@@ -5,7 +5,7 @@ import { portfolio } from "./portfolio-content";
 // TODO: set this to your real deployed URL so social previews and JSON-LD resolve.
 const siteUrl = "https://taiebbourbia.dev";
 const description =
-  "Creative portfolio of Taieb Bourbia, a TH Cologne student building full-stack products, AI workflows, Java services, and React interfaces.";
+  "Taieb Bourbia is a software developer and TH Cologne student. Selected projects in Java, React, Python, and machine learning.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

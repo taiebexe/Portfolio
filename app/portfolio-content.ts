@@ -1,23 +1,18 @@
 export const portfolio = {
   name: "Taieb Bourbia",
   initials: "TB",
-  role: "Software developer and TH Cologne student",
-  location: "Based around Cologne, Germany",
+  role: "Software developer",
+  location: "Cologne, Germany",
   availability: "Open to internships, student projects, and collaborations",
   email: "taieb.bourbia@gmail.com",
   headline:
-    "I build full-stack products, AI experiments, and clean interfaces that make practical ideas usable.",
+    "Software developer.",
   summary:
-    "I am a student at TH Cologne with public work across React, TypeScript, Java, Spring Boot, Python, AI-assisted analytics, and product-style web apps.",
+    "I study at TH Cologne and work in software development at CGI. I build web applications with Java, React, and Python, and explore practical uses for AI.",
   links: [
     { label: "Email", href: "mailto:taieb.bourbia@gmail.com" },
     { label: "GitHub", href: "https://github.com/taiebexe" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/taiebbourbia/" },
-  ],
-  stats: [
-    { value: "4", label: "featured product builds" },
-    { value: "3", label: "software + AI roles" },
-    { value: "12+", label: "public repositories" },
   ],
   marquee: [
     "Full-stack products",
@@ -137,7 +132,7 @@ export const portfolio = {
       type: "AI fitness analytics",
       year: "2026",
       description:
-        "AI-powered workout analytics for Hevy. It fetches workout history, computes training metrics, visualizes progress, and generates coaching insights without storing user data.",
+        "A workout analytics app for Hevy. It turns training history into progress charts, training metrics, and AI coaching insights without storing user data.",
       stack: ["Next.js", "TypeScript", "Tailwind", "Recharts", "Gemini"],
       links: [
         { label: "Code", href: "https://github.com/taiebexe/RepIQ" },
@@ -146,10 +141,10 @@ export const portfolio = {
     },
     {
       name: "WohnSwipe",
-      type: "Full-stack product app",
+      type: "Apartment discovery",
       year: "2026",
       description:
-        "Swipe-based apartment discovery for Berlin renters with renter profiles, ranked listings, saved matches, and AI-generated inquiry messages.",
+        "An apartment search app for Berlin renters. Users swipe through ranked listings, save matches, and generate inquiry messages based on their renter profile.",
       stack: ["React", "Vite", "Spring Boot", "PostgreSQL", "FastAPI", "Docker"],
       links: [{ label: "Code", href: "https://github.com/taiebexe/WohnSwipe" }],
     },
@@ -158,7 +153,7 @@ export const portfolio = {
       type: "Computer vision tool",
       year: "2026",
       description:
-        "Automated plant-image quality control using LLaVA vision models to classify images as viable plants or empty pots/debris, with PDF reports and evaluation metrics.",
+        "A tool that uses LLaVA to distinguish viable plants from empty pots and debris in images. Includes classification metrics and PDF reports.",
       stack: ["Python", "LLaVA", "Pillow", "Matplotlib", "Scikit-learn"],
       links: [
         {
@@ -169,10 +164,10 @@ export const portfolio = {
     },
     {
       name: "Wallet Tracker",
-      type: "AI expense app",
+      type: "Personal finance",
       year: "2025",
       description:
-        "Expense tracking app with user authentication, categorized spending, REST endpoints, and AI-based predictions for future spending trends.",
+        "An expense tracker with user accounts, spending categories, and forecasts. Built around a Spring Boot backend and a Python prediction service.",
       stack: ["Java", "Spring Boot", "Thymeleaf", "PostgreSQL", "Flask", "Scikit-learn"],
       links: [{ label: "Code", href: "https://github.com/taiebexe/Wallet-Tracker" }],
     },
@@ -211,7 +206,6 @@ export const portfolio = {
       company: "CGI",
       type: "Part-time",
       date: "June 2026–Present",
-      duration: "1 month",
       location: "Cologne, North Rhine-Westphalia, Germany · Hybrid",
       bullets: ["Working-student role in software development."],
       skills: ["Software Development"],
@@ -221,7 +215,6 @@ export const portfolio = {
       company: "TH Cologne",
       type: "Part-time",
       date: "March 2026–Present",
-      duration: "4 months",
       location: "Cologne, North Rhine-Westphalia, Germany · Hybrid",
       bullets: [
         "Supervised practical groups in the Algorithms and Data Structures module.",
@@ -234,7 +227,6 @@ export const portfolio = {
       company: "TH Cologne",
       type: "Part-time",
       date: "October 2025–March 2026",
-      duration: "6 months",
       location: "Cologne, North Rhine-Westphalia, Germany · Hybrid",
       bullets: [
         "Contributed to a university research project in MLOps and machine learning.",
@@ -248,7 +240,6 @@ export const portfolio = {
       company: "talentsconnect Group",
       type: "Part-time",
       date: "August 2025–June 2026",
-      duration: "11 months",
       location: "Cologne, North Rhine-Westphalia, Germany · Hybrid",
       bullets: [
         "Supported IT operations, including user administration, hardware/software setup, and technical support.",

@@ -1,6 +1,6 @@
 # Portfolio Site
 
-A simple animated portfolio for Taieb Bourbia, built with vinext, Next, React,
+A minimal portfolio for Taieb Bourbia, built with vinext, Next, React,
 and Tailwind CSS.
 
 ## Edit Your Information
@@ -11,13 +11,14 @@ Update your portfolio content in:
 app/portfolio-content.ts
 ```
 
-That file controls the name, headline, links, focus areas, projects, extra
-repositories, experience, and contact details.
+That file controls the name, headline, links, technologies, projects, extra
+repositories, experience, and contact details. The page groups technologies by
+category and keeps extra repositories in an expandable list.
 
-The generated hero image is stored at:
+The portrait used on the homepage is stored at:
 
 ```txt
-public/portfolio-hero.png
+public/taieb-bourbia-photo.jpg
 ```
 
 ## Run Locally

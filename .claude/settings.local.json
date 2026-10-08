@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p image-originals)",
+      "Bash(cp public/portfolio-hero.png public/taieb-bourbia-photo.jpg image-originals/)",
+      "Bash(sips -Z 1100 -s format jpeg -s formatOptions 68 public/taieb-bourbia-photo.jpg --out public/taieb-bourbia-photo.jpg)",
+      "Bash(sips -Z 1600 -s format jpeg -s formatOptions 72 public/portfolio-hero.png --out public/portfolio-hero.jpg)",
+      "Bash(rm public/portfolio-hero.png)"
+    ]
+  }
+}

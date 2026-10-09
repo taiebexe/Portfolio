@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { portfolio } from "./portfolio-content";
 
-// TODO: set this to your real deployed URL so social previews and JSON-LD resolve.
+// Change this once the site has its final domain.
 const siteUrl = "https://taiebbourbia.dev";
 const description =
-  "Taieb Bourbia is a software developer and TH Cologne student. Selected projects in Java, React, Python, and machine learning.";
+  "Taieb Bourbia, student at TH Cologne and working student at CGI. Projects in Java, React and Python.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Taieb Bourbia | Portfolio",
+  title: "Taieb Bourbia",
   description,
   alternates: { canonical: "/" },
   icons: {
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/",
-    title: "Taieb Bourbia | Portfolio",
+    title: "Taieb Bourbia",
     description,
     siteName: "Taieb Bourbia",
     images: [
@@ -30,13 +30,13 @@ export const metadata: Metadata = {
         url: "/portfolio-hero.jpg",
         width: 1600,
         height: 853,
-        alt: "Taieb Bourbia — portfolio",
+        alt: "Taieb Bourbia",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Taieb Bourbia | Portfolio",
+    title: "Taieb Bourbia",
     description,
     images: ["/portfolio-hero.jpg"],
   },

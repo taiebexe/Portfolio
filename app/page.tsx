@@ -1,4 +1,6 @@
+import type { CSSProperties } from "react";
 import Image from "next/image";
+import { Effects } from "./effects";
 import { Icon } from "./icons";
 import { portfolio } from "./portfolio-content";
 
@@ -15,9 +17,11 @@ const socials = [
   ...portfolio.links.map((link) => ({ ...link, icon: link.label.toLowerCase() })),
 ];
 
+const statementWords = portfolio.statement.split(" ");
+
 function Heading({ id, top, bottom, as: Tag = "h2" }: { id: string; top: string; bottom: string; as?: "h1" | "h2" }) {
   return (
-    <Tag className="heading" id={id}>
+    <Tag className="heading" id={id} data-reveal={Tag === "h2" ? "" : undefined}>
       {top} <span>{bottom}</span>
     </Tag>
   );
@@ -27,6 +31,8 @@ export default function Home() {
   return (
     <div className="page" id="top">
       <a className="skip-link" href="#main">Skip to content</a>
+      <div className="grain" aria-hidden="true" />
+      <Effects />
 
       <nav className="dock" aria-label="Sections">
         {sections.map((item) => (
@@ -66,7 +72,13 @@ export default function Home() {
 
         <main id="main">
           <section className="hero" aria-labelledby="hero-title">
-            <Heading as="h1" id="hero-title" top="Software" bottom="Developer" />
+            <div className="hero-title">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img className="shape shape-star" src="/shapes/star.png" alt="" width={120} height={120} />
+              <Heading as="h1" id="hero-title" top="Software" bottom="Developer" />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img className="shape shape-bolt" src="/shapes/bolt.png" alt="" width={110} height={110} />
+            </div>
             <p className="lead">{portfolio.intro}</p>
 
             <dl className="stats">
@@ -89,32 +101,40 @@ export default function Home() {
             </div>
           </section>
 
+          <section className="statement-section" aria-label="What I do">
+            <p className="statement" data-statement style={{ "--n": statementWords.length } as CSSProperties}>
+              {statementWords.map((word, index) => (
+                <span key={index} style={{ "--i": index } as CSSProperties}>{word} </span>
+              ))}
+            </p>
+          </section>
+
           <section className="section" id="projects" aria-labelledby="projects-title">
             <Heading id="projects-title" top="Recent" bottom="Projects" />
-            <div className="rows">
+            <div className="cards">
               {portfolio.projects.map((project) => (
-                <article className="row project" key={project.name}>
-                  <div className={`thumb tone-${project.tone}`} aria-hidden="true">
-                    <Icon name={project.icon} size={34} />
+                <article className="card" key={project.name} data-reveal="">
+                  <div className={`cover tone-${project.tone}`} aria-hidden="true">
+                    <span className="cover-year">{project.year}</span>
+                    <span className="cover-arrow"><Icon name="arrow-up-right" size={20} /></span>
+                    <span className="cover-icon"><Icon name={project.icon} size={56} /></span>
+                    <span className="cover-name">{project.name}</span>
                   </div>
-                  <div className="row-body">
-                    <h3>
-                      <a className="row-link" href={project.links[0].href}>{project.name}</a>
-                    </h3>
-                    <p className="row-sub">{project.tagline} · {project.year}</p>
-                    <p className="row-text">{project.description}</p>
-                    <p className="stack">{project.stack.join(" · ")}</p>
-                    {project.links.length > 1 && (
-                      <p className="row-extra">
-                        {project.links.slice(1).map((link) => (
-                          <a key={link.href} href={link.href}>
-                            {link.label === "Code" ? "Source code" : link.label}
-                          </a>
-                        ))}
-                      </p>
-                    )}
-                  </div>
-                  <span className="row-arrow" aria-hidden="true"><Icon name="arrow-up-right" size={22} /></span>
+                  <h3>
+                    <a className="card-link" href={project.links[0].href}>{project.name}</a>
+                  </h3>
+                  <p className="card-sub">{project.tagline}</p>
+                  <p className="card-text">{project.description}</p>
+                  <p className="stack">{project.stack.join(" · ")}</p>
+                  {project.links.length > 1 && (
+                    <p className="card-extra">
+                      {project.links.slice(1).map((link) => (
+                        <a key={link.href} href={link.href}>
+                          {link.label === "Code" ? "Source code" : link.label}
+                        </a>
+                      ))}
+                    </p>
+                  )}
                 </article>
               ))}
             </div>
@@ -134,15 +154,15 @@ export default function Home() {
 
           <section className="section" id="experience" aria-labelledby="experience-title">
             <Heading id="experience-title" top="Work" bottom="Experience" />
-            <div className="rows">
+            <div className="jobs">
               {portfolio.experience.map((item) => (
-                <article className="row" key={`${item.company}-${item.role}`}>
-                  <div className="row-body">
+                <article className="job" key={`${item.company}-${item.role}`} data-reveal="">
+                  <div>
                     <h3>{item.company}</h3>
-                    <p className="row-sub">{item.role}</p>
-                    {item.note && <p className="row-text">{item.note}</p>}
-                    <p className="row-date">{item.date}</p>
+                    <p className="job-role">{item.role}</p>
                   </div>
+                  <p className="job-date">{item.date}</p>
+                  {item.note && <p className="job-note">{item.note}</p>}
                 </article>
               ))}
             </div>
@@ -150,7 +170,7 @@ export default function Home() {
 
           <section className="section" id="tools" aria-labelledby="tools-title">
             <Heading id="tools-title" top="Everyday" bottom="Tools" />
-            <ul className="tools">
+            <ul className="tools" data-reveal="">
               {portfolio.tools.map((tool) => (
                 <li key={tool.name}>
                   <span className="tool-logo">
@@ -168,11 +188,11 @@ export default function Home() {
 
           <section className="section contact" id="contact" aria-labelledby="contact-title">
             <Heading id="contact-title" top="Let’s work" bottom="Together" />
-            <p className="lead">
+            <p className="lead" data-reveal="">
               I’m open to internships, student projects and anything else that sounds
               interesting. Email is the easiest way to reach me.
             </p>
-            <div className="contact-actions">
+            <div className="contact-actions" data-reveal="">
               <a className="button" href={`mailto:${portfolio.email}`}>
                 {portfolio.email} <Icon name="arrow-up-right" size={18} />
               </a>
@@ -183,13 +203,27 @@ export default function Home() {
               ))}
             </div>
           </section>
-
-          <footer className="site-footer">
-            <span>{portfolio.name}</span>
-            <span>{portfolio.location}</span>
-          </footer>
         </main>
       </div>
+
+      <footer className="footer">
+        <div className="footer-inner">
+          <p className="footer-tagline">Thanks for<br />stopping by.</p>
+          <div>
+            <p className="footer-label">/Quick links</p>
+            <div className="chips">
+              {sections.map((item) => <a key={item.href} href={item.href}>{item.label}</a>)}
+            </div>
+          </div>
+          <div>
+            <p className="footer-label">/Contact</p>
+            <a className="footer-contact" href={`mailto:${portfolio.email}`}>{portfolio.email}</a>
+            <p className="footer-place">{portfolio.location}</p>
+          </div>
+        </div>
+        <p className="wordmark" aria-hidden="true">Taieb</p>
+        <p className="footer-legal">© {new Date().getFullYear()} {portfolio.name}</p>
+      </footer>
     </div>
   );
 }

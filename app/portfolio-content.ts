@@ -12,6 +12,8 @@ export const portfolio = {
   intro:
     "I study at TH Cologne and work part-time as a software developer at CGI. Most of what I build on my own is web apps with a Java or Python backend, and lately a few of them have a language model doing part of the work.",
   cardBio: "Student at TH Cologne, working student in software development at CGI.",
+  statement:
+    "I build things people can actually use: a workout dashboard, an apartment finder, an expense tracker. Java or Python at the back, React at the front, and a language model where it earns its place.",
   stats: [
     { value: "12", label: "Public repos" },
     { value: "4", label: "Roles since 2025" },

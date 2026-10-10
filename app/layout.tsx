@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { portfolio } from "./portfolio-content";
 
-// Change this once the site has its final domain.
-const siteUrl = "https://taiebbourbia.dev";
+// Change this if the site moves to its own domain.
+const siteUrl = "https://portfolio-site.taieb-bourbia.workers.dev";
 const description =
   "Taieb Bourbia, student at TH Cologne and working student at CGI. Projects in Java, React and Python.";
 

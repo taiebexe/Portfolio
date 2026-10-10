@@ -1,6 +1,6 @@
-# taiebbourbia.dev
+# Portfolio
 
-My personal site. One page, no database, deployed as a Cloudflare Worker via vinext.
+My personal site, live at https://portfolio-site.taieb-bourbia.workers.dev. One page, no database, deployed as a Cloudflare Worker via vinext.
 
 All the text (projects, experience, links) lives in `app/portfolio-content.ts`.
 The layout is in `app/page.tsx` and the styles in `app/globals.css`.

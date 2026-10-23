@@ -1,5 +1,6 @@
 import type { CSSProperties } from "react";
 import Image from "next/image";
+import { DotField } from "./dot-field";
 import { Effects } from "./effects";
 import { Icon } from "./icons";
 import { portfolio } from "./portfolio-content";
@@ -32,6 +33,7 @@ export default function Home() {
     <div className="page" id="top">
       <a className="skip-link" href="#main">Skip to content</a>
       <div className="grain" aria-hidden="true" />
+      <DotField />
       <Effects />
 
       <nav className="dock" aria-label="Sections">
